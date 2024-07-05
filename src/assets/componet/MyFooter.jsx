@@ -19,12 +19,12 @@ const MyFooter = () => {
         </a>
       </Container>
 
-      <p className="text-center my-1">EpiBook from Diego Basili</p>
+      <p className="text-center my-1">Meteo from Diego Basili</p>
       <p className="text-center my-1">
-        Email: info@epibooks.com | Tel: +1234567890
+        Email: info@meteo.com | Tel: +1234567890
       </p>
       <p className="text-center my-1">
-        &copy; 2024 EpiBooks. Tutti i diritti riservati.
+        &copy; 2024 meteo. Tutti i diritti riservati.
       </p>
     </footer>
   );
