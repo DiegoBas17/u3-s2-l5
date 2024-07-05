@@ -57,8 +57,8 @@ const MoreMeteo = ({ objCity }) => {
         <h3>Nelle prossime ore:</h3>
         <Row className="text-center gy-2">
           {arrayMeteoCity.map((objMeteoStep, index) => (
-            <Col sm="1" key={index}>
-              <div className="card">
+            <Col sm="1" md="2" lg="3" key={index}>
+              <div className="card bg-tertiary">
                 <p className="mb-1">
                   {(() => {
                     const oraEsatta = calcolaOraEsatta(objMeteoStep.dt);
