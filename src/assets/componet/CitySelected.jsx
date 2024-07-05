@@ -2,6 +2,13 @@ import { useEffect, useState } from "react";
 import { /*  Button, */ Col, Container, Row } from "react-bootstrap";
 /* import { Link } from "react-router-dom"; */
 import MoreMeteo from "./MoreMeteo";
+import {
+  Moisture,
+  SunriseFill,
+  SunsetFill,
+  ThermometerHalf,
+  Wind,
+} from "react-bootstrap-icons";
 
 const CitySelected = ({ objCity }) => {
   const [objCityMeteo, setObjCityMeteo] = useState(null);
@@ -66,45 +73,74 @@ const CitySelected = ({ objCity }) => {
           <Row className="text-center">
             <Col sm="12">{objCityMeteo.weather[0].main}</Col>
             <Col md="4" className="d-flex flex-column text-light">
-              <p className="mb-1">{objCityMeteo.weather[0].description}</p>
-              <img
-                src={getWeatherIconUrl(objCityMeteo.weather[0].icon)}
-                alt={objCityMeteo.weather[0].description}
-                style={{ height: "70px", width: "70px" }}
-                className="mx-auto"
-              />
+              <div className="card">
+                <p className="mb-1">{objCityMeteo.weather[0].description}</p>
+                <img
+                  src={getWeatherIconUrl(objCityMeteo.weather[0].icon)}
+                  alt={objCityMeteo.weather[0].description}
+                  style={{ height: "70px", width: "70px" }}
+                  className="mx-auto"
+                />
+              </div>
             </Col>
             <Col md="4" className="text-light">
               <h2>{`${kelvinToCelsius(objCityMeteo.main.temp)}°`}</h2>
             </Col>
             <Col md="4" className="d-flex flex-column">
-              <p className="mb-1">{`Temp. percepita: ${kelvinToCelsius(
-                objCityMeteo.main.feels_like
-              )}°`}</p>
-              <p className="mb-1">{`Temp. min.: ${kelvinToCelsius(
-                objCityMeteo.main.temp_min
-              )}°`}</p>
-              <p className="mb-1">{`Temp. max: ${kelvinToCelsius(
-                objCityMeteo.main.temp_max
-              )}°`}</p>
+              <div className="card">
+                <p className="mb-1">
+                  <ThermometerHalf />
+                  {`Temp. percepita: ${kelvinToCelsius(
+                    objCityMeteo.main.feels_like
+                  )}°`}
+                </p>
+                <p className="mb-1">
+                  {" "}
+                  <ThermometerHalf />
+                  {`Temp. min.: ${kelvinToCelsius(
+                    objCityMeteo.main.temp_min
+                  )}°`}
+                </p>
+                <p className="mb-1">
+                  {" "}
+                  <ThermometerHalf />
+                  {`Temp. max: ${kelvinToCelsius(objCityMeteo.main.temp_max)}°`}
+                </p>
+              </div>
             </Col>
           </Row>
-          <Row className="text-center">
+          <Row className="text-center mt-3">
             <Col>
-              <p className="mb-1">{`alba: ${calcolaOraEsatta(
-                objCityMeteo.sys.sunrise
-              )}`}</p>
+              <div className="card">
+                <p className="mb-1">
+                  <SunriseFill className="me-1" />
+                  {`alba: ${calcolaOraEsatta(objCityMeteo.sys.sunrise)}`}
+                </p>
+              </div>
             </Col>
             <Col>
-              <p className="mb-1">{`Tramonto: ${calcolaOraEsatta(
-                objCityMeteo.sys.sunset
-              )}`}</p>
+              <div className="card">
+                <p className="mb-1">
+                  <SunsetFill className="me-1" />
+                  {`Tramonto: ${calcolaOraEsatta(objCityMeteo.sys.sunset)}`}
+                </p>
+              </div>
             </Col>
             <Col>
-              <p className="mb-1">{`Vento: ${objCityMeteo.wind.speed}`}</p>
+              <div className="card">
+                <p className="mb-1">
+                  {`Vento: ${objCityMeteo.wind.speed}`}
+                  <Wind className="ms-1" />
+                </p>
+              </div>
             </Col>
             <Col>
-              <p className="mb-1">{`Umidità: ${objCityMeteo.main.humidity}`}</p>
+              <div className="card">
+                <p className="mb-1">
+                  <Moisture className="me-1 mb-1" />
+                  {`Umidità: ${objCityMeteo.main.humidity}%`}
+                </p>
+              </div>
             </Col>
           </Row>
         </Container>

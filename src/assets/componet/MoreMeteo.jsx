@@ -59,7 +59,7 @@ const MoreMeteo = ({ objCity }) => {
           {arrayMeteoCity.map((objMeteoStep, index) => (
             <Col sm="1" md="2" lg="3" key={index}>
               <div className="card">
-                <p className="mb-1">
+                <p className="mb-1 mt-2">
                   {(() => {
                     const oraEsatta = calcolaOraEsatta(objMeteoStep.dt);
                     const ora = oraEsatta.split(":")[0];
