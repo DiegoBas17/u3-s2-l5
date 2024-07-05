@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import MyNavbar from "./assets/componet/MyNavbar";
+import InputFormCity from "./assets/componet/InputFormCity";
+import CitySelected from "./assets/componet/CitySelected";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [arrayCity, setArrayCity] = useState("");
+  const [city, setCity] = useState("roma");
+  const fetchInputCity = () => {
+    fetch(
+      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=dcc50e318c9db5f32a167131d97c167e`
+    )
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw new Error("Errore nel reperimento della città");
+        }
+      })
+      .then((arraycities) => {
+        setArrayCity(arraycities);
+      })
+      .catch((err) => alert(err));
+  };
+
+  useEffect(() => {
+    fetchInputCity();
+  }, [city]);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div id="containerApp" className="text-light">
+      <MyNavbar />
+      <InputFormCity setCity={setCity} />
+      {arrayCity.length > 0 && <CitySelected objCity={arrayCity[0]} />}
+    </div>
+  );
 }
 
-export default App
+export default App;
