@@ -69,7 +69,7 @@ const CitySelected = ({ objCity }) => {
       {objCityMeteo && (
         <Container className="text-light">
           <h2 className="text-center">{timeStamp(objCityMeteo.dt)}</h2>
-          <h1 className="text-center">{objCity.name}</h1>
+          <h1 className="text-center">{objCity.local_names.it}</h1>
           <Row className="text-center">
             <Col sm="12">{objCityMeteo.weather[0].main}</Col>
             <Col md="4" className="d-flex flex-column text-light">
