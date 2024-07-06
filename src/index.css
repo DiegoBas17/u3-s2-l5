@@ -1,4 +1,4 @@
-body {
+/* body {
         background-color: #6996E2;
         font-family: "Rubik", sans-serif;
         font-weight: 500
@@ -7,4 +7,22 @@ body {
 .card{
       background-color: #7ea1dd;  
       border-color: #7ea1dd;
+} */
+
+
+/* css per i New Components */
+.first-color { 
+	background: #dbd8e3; 
+}
+	
+.second-color { 
+	background: #5c5470; 
+}
+
+.third-color { 
+	background: #352f44; 
+}
+
+.fourth-color { 
+	background: #2a2438; 
 }

@@ -4,12 +4,11 @@ import MyNavbar from "./assets/componet/MyNavbar";
 import InputFormCity from "./assets/componet/InputFormCity";
 import CitySelected from "./assets/componet/CitySelected";
 import { useState, useEffect } from "react";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { BrowserRouter /* Route, Routes */ } from "react-router-dom";
-/* import MoreMeteo from "./assets/componet/MoreMeteo"; */
 import MyFooter from "./assets/componet/MyFooter";
+import Home from "./assets/newComponent/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [arrayCity, setArrayCity] = useState("");
@@ -41,18 +40,12 @@ function App() {
     <div id="containerApp" className="text-light">
       <BrowserRouter>
         <MyNavbar />
-        <InputFormCity setCity={setCity} />
-        {/* <Routes> */}
-        {city && arrayCity.length > 0 && (
-          <CitySelected objCity={arrayCity[0]} />
-        )}
-        {/* <Route
-            path="/moremeteo"
-            element={
-              arrayCity.length > 0 && <MoreMeteo objCity={arrayCity[0]} />
-            }
-          /> */}
-        {/* </Routes> */}
+        {/* <InputFormCity setCity={setCity} />
+      {city && arrayCity.length > 0 && <CitySelected objCity={arrayCity[0]} />}
+ */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
         <MyFooter />
       </BrowserRouter>
     </div>
