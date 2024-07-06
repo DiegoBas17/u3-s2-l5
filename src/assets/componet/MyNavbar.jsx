@@ -1,4 +1,5 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const MyNavbar = () => {
   return (
@@ -7,21 +8,21 @@ const MyNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="#home" className="text-light">
+            <NavLink to={`/meteo-datails/` + "roma"} className="nav-link">
               Roma
-            </Nav.Link>
-            <Nav.Link href="#link" className="text-light">
+            </NavLink>
+            <NavLink to={`/meteo-datails/` + "milano"} className="nav-link">
               Milano
-            </Nav.Link>
-            <Nav.Link href="#link" className="text-light">
+            </NavLink>
+            <NavLink to={`/meteo-datails/` + "catania"} className="nav-link">
               Catania
-            </Nav.Link>
-            <Nav.Link href="#link" className="text-light">
-              Sassati
-            </Nav.Link>
-            <Nav.Link href="#link" className="text-light">
+            </NavLink>
+            <NavLink to={`/meteo-datails/` + "sassari"} className="nav-link">
+              Sassari
+            </NavLink>
+            <NavLink to={`/meteo-datails/` + "latina"} className="nav-link">
               Latina
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

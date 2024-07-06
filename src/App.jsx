@@ -9,9 +9,10 @@ import "slick-carousel/slick/slick-theme.css";
 import MyFooter from "./assets/componet/MyFooter";
 import Home from "./assets/newComponent/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MeteoDetails from "./assets/newComponent/MeteoDetails";
 
 function App() {
-  const [arrayCity, setArrayCity] = useState("");
+  /*   const [arrayCity, setArrayCity] = useState("");
   const [city, setCity] = useState("");
   const fetchInputCity = () => {
     fetch(
@@ -35,9 +36,9 @@ function App() {
       fetchInputCity();
     }
   }, [city]);
-
+ */
   return (
-    <div id="containerApp" className="text-light">
+    <div id="containerApp">
       <BrowserRouter>
         <MyNavbar />
         {/* <InputFormCity setCity={setCity} />
@@ -45,6 +46,7 @@ function App() {
  */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/meteo-datails/:city" element={<MeteoDetails />} />
         </Routes>
         <MyFooter />
       </BrowserRouter>

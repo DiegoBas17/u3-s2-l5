@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 
 const MeteoCard = (props) => {
   const [objCityMeteo, setObjCityMeteo] = useState(null);
@@ -35,28 +35,45 @@ const MeteoCard = (props) => {
   return (
     <>
       {objCityMeteo && (
-        <Row>
-          <Col md="6">
-            <img
-              src={getWeatherIconUrl(objCityMeteo.weather[0].icon)}
-              alt={`Icona meteo per ${objCityMeteo.name}`}
-              style={{ height: "150px", width: "150px" }}
-              className="d-inline"
-            />
-          </Col>
-          <Col md="6" className="text-start my-auto ms-0 ps-0">
-            <h4 className="d-inline">
-              <span className="h6 text-secondary">Luogo</span>
-              <br />
-              {objCityMeteo.name}
-            </h4>
-          </Col>
-          <p>
-            Temperatura: {kelvinToCelsius(objCityMeteo.main.temp)}°C
-            <br />
-            Vento: {objCityMeteo.wind.speed} km/h
-          </p>
-        </Row>
+        <Container className="second-color rounded-4">
+          <Row>
+            <Col md="6">
+              <img
+                src={getWeatherIconUrl(objCityMeteo.weather[0].icon)}
+                alt={`Icona meteo per ${objCityMeteo.name}`}
+                style={{ height: "110px", width: "110px" }}
+                className="d-inline"
+              />
+            </Col>
+            <Col md="6" className="text-start my-auto ms-0 ps-0">
+              <h4 className="d-inline">
+                <span className="h6 opacity-50">Luogo</span>
+                <br />
+                {objCityMeteo.name}
+              </h4>
+            </Col>
+            <Col md="4">
+              <p>
+                <span className="h6 opacity-50">Temperatura:</span> <br />{" "}
+                {kelvinToCelsius(objCityMeteo.main.temp)}°C
+              </p>
+            </Col>
+            <Col md="4">
+              <p>
+                <span className="h6 opacity-50">Vento:</span>
+                <br />
+                {objCityMeteo.wind.speed} km/h
+              </p>
+            </Col>
+            <Col md="4">
+              <p>
+                <span className="h6 opacity-50">Umidità:</span>
+                <br />
+                {objCityMeteo.main.humidity} %
+              </p>
+            </Col>
+          </Row>
+        </Container>
       )}
     </>
   );
