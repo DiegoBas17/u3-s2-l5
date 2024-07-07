@@ -21,7 +21,7 @@ const MyInputForm = () => {
         variant="outline-secondary"
         id="button-addon2"
         onClick={() => {
-          Navigate("/meteo-datails/" + inputCity);
+          Navigate("/meteo-city/" + inputCity);
         }}
       >
         <Search className="mb-1" />

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ForecastMeteoCard from "./ForecastMeteoCard";
+import MainCardSecondPage from "./MainCardSecondPage";
 
-const MeteoDetails = () => {
+const MeteoCity = () => {
   const params = useParams();
   const city = params.city;
   const [arrayGeoCity, setArrayGeoCity] = useState("");
@@ -34,12 +35,28 @@ const MeteoDetails = () => {
   return (
     <>
       {arrayGeoCity && (
-        <ForecastMeteoCard
-          lat={arrayGeoCity[0].lat}
-          lon={arrayGeoCity[0].lon}
-        />
+        <>
+          <h1 className="text-center">
+            {arrayGeoCity[0].local_names.it
+              ? arrayGeoCity[0].local_names.it
+              : arrayGeoCity[0].name}
+          </h1>
+          <MainCardSecondPage
+            name={
+              arrayGeoCity[0].local_names.it
+                ? arrayGeoCity[0].local_names.it
+                : arrayGeoCity[0].name
+            }
+            lat={arrayGeoCity[0].lat}
+            lon={arrayGeoCity[0].lon}
+          />
+          <ForecastMeteoCard
+            lat={arrayGeoCity[0].lat}
+            lon={arrayGeoCity[0].lon}
+          />
+        </>
       )}
     </>
   );
 };
-export default MeteoDetails;
+export default MeteoCity;

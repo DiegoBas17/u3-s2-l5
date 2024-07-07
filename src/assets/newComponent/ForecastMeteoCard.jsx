@@ -72,7 +72,7 @@ const ForecastMeteoCard = (props) => {
     const giornoMese = data.getDate().toString().padStart(2, "0");
     const mese = mesi[data.getMonth()];
 
-    return `${giornoMese}/${mese}`;
+    return `${giornoMese} - ${mese}`;
   };
 
   const kelvinToCelsius = (kelvin) => {
@@ -85,8 +85,6 @@ const ForecastMeteoCard = (props) => {
     infinite: false,
     slidesToShow: 5,
     slidesToScroll: 1,
-    vertical: true,
-    verticalSwiping: true,
     centerPadding: "60px",
     swipeToSlide: true,
   };
@@ -97,22 +95,29 @@ const ForecastMeteoCard = (props) => {
         <Slider {...settings}>
           {forecast &&
             forecast.map((meteo, index) => (
-              <div key={index}>
-                <Row className="text-center align-items-center">
-                  <Col md="3">
+              <div key={index} className=" px-3">
+                <Row className="text-center align-items-center third-color  rounded-4 overflow-hidden">
+                  <Col md="12" className="second-color">
+                    {calcolaGiornoEMese(meteo.dt)}
+                  </Col>
+                  <Col md="6" className="second-color">
+                    {calcolaGiornoSettimana(meteo.dt)}
+                  </Col>
+                  <Col md="6" className="second-color">
+                    {calcolaOraEsatta(meteo.dt)}
+                  </Col>
+                  <Col md="6">
+                    <h3 className="d-inline">
+                      {kelvinToCelsius(meteo.main.temp)}°C
+                    </h3>
+                  </Col>
+                  <Col md="6">
                     <img
                       src={getWeatherIconUrl(meteo.weather[0].icon)}
                       alt=""
                       className="d-inline"
                     />
-                    <h3 className="d-inline">
-                      +{kelvinToCelsius(meteo.main.temp_max)}/ +
-                      {kelvinToCelsius(meteo.main.temp_min)}
-                    </h3>
                   </Col>
-                  <Col md="3">{calcolaOraEsatta(meteo.dt)} </Col>
-                  <Col md="3">{calcolaGiornoSettimana(meteo.dt)}</Col>
-                  <Col md="3">{calcolaGiornoEMese(meteo.dt)}</Col>
                 </Row>
               </div>
             ))}

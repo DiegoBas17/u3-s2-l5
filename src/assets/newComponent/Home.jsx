@@ -27,39 +27,33 @@ const Home = () => {
       <Row className="g-3">
         <Col md="4">
           <Link
-            to={`/meteo-datails/` + "ciampino"}
+            to={`/meteo-city/` + "ciampino"}
             className="text-decoration-none"
           >
             <MeteoCard lat={41.8002891} lon={12.6004706} />
           </Link>
         </Col>
         <Col md="4">
-          <Link
-            to={`/meteo-datails/` + "latina"}
-            className="text-decoration-none"
-          >
+          <Link to={`/meteo-city/` + "latina"} className="text-decoration-none">
             <MeteoCard lat={41.4672827} lon={12.9037789} />
           </Link>
         </Col>
         <Col md="4">
           <Link
-            to={`/meteo-datails/` + "frascati"}
+            to={`/meteo-city/` + "frascati"}
             className="text-decoration-none"
           >
             <MeteoCard lat={41.8082452} lon={12.6803684} />
           </Link>
         </Col>
         <Col md="4">
-          <Link
-            to={`/meteo-datails/` + "Tivoli"}
-            className="text-decoration-none"
-          >
+          <Link to={`/meteo-city/` + "Tivoli"} className="text-decoration-none">
             <MeteoCard lat={41.960922} lon={12.798884} />
           </Link>
         </Col>
         <Col md="4">
           <Link
-            to={`/meteo-datails/` + "Fiumicino"}
+            to={`/meteo-city/` + "Fiumicino"}
             className="text-decoration-none"
           >
             <MeteoCard lat={41.7712145} lon={12.2278855} />
@@ -67,7 +61,7 @@ const Home = () => {
         </Col>
         <Col md="4">
           <Link
-            to={`/meteo-datails/` + "Ladispoli"}
+            to={`/meteo-city/` + "Ladispoli"}
             className="text-decoration-none"
           >
             <MeteoCard lat={41.9537219} lon={12.0734646} />

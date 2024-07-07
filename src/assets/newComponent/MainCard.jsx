@@ -42,7 +42,7 @@ const MainCard = (props) => {
   return (
     <>
       {objCityMeteo && (
-        <Link to={`/meteo-datails/` + "roma"} className="text-decoration-none">
+        <Link to={`/meteo-city/` + "roma"} className="text-decoration-none">
           <Container className="third-color p-4 rounded-4">
             <Row>
               <Col md="3">
