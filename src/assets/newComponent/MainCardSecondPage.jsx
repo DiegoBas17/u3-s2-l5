@@ -126,7 +126,7 @@ const MainCardSecondPage = (props) => {
 
   useEffect(() => {
     fetchCurrentWeather();
-  }, []);
+  }, [props.name]);
 
   return (
     <>

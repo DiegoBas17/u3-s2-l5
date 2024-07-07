@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ForecastMeteoCard from "./ForecastMeteoCard";
 import MainCardSecondPage from "./MainCardSecondPage";
+import MyInputForm from "./MyInputForm";
+import { Container } from "react-bootstrap";
 
 const MeteoCity = () => {
   const params = useParams();
@@ -30,7 +32,7 @@ const MeteoCity = () => {
     if (city) {
       fetchGeocoding();
     }
-  }, []);
+  }, [city]);
 
   return (
     <>
@@ -41,11 +43,15 @@ const MeteoCity = () => {
               ? arrayGeoCity[0].local_names.it
               : arrayGeoCity[0].name}
           </h1>
+          <Container>
+            <MyInputForm />
+          </Container>
           <MainCardSecondPage
             name={
-              arrayGeoCity[0].local_names.it
+              city
+              /* arrayGeoCity[0].local_names.it
                 ? arrayGeoCity[0].local_names.it
-                : arrayGeoCity[0].name
+                : arrayGeoCity[0].name */
             }
             lat={arrayGeoCity[0].lat}
             lon={arrayGeoCity[0].lon}
