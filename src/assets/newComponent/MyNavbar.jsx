@@ -18,12 +18,18 @@ const MyNavbar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
             <NavLink to="/" className="nav-link">
-              <img
-                src={logo}
-                alt="logo"
-                style={{ height: "4rem", width: "4rem" }}
-                className="rounded-4"
-              />
+              <OverlayTrigger
+                placement="right"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip("Home")}
+              >
+                <img
+                  src={logo}
+                  alt="logo"
+                  style={{ height: "4rem", width: "4rem" }}
+                  className="rounded-4"
+                />
+              </OverlayTrigger>
             </NavLink>
             <NavLink to={`/meteo-city/` + "Tokyo"} className="nav-link">
               <OverlayTrigger

@@ -6,9 +6,9 @@
 }
 
 .nav-link.active img {
-    border: 2px solid red; 
+    border: 2px solid #283334; 
     border-radius: 4px; 
-    color: red; 
+    color: #283334; 
   }
   
   .nav-link:hover {
