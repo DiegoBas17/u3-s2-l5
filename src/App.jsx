@@ -1,9 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import MyNavbar from "./assets/componet/MyNavbar";
+import MyNavbar from "./assets/newComponent/MyNavbar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import MyFooter from "./assets/componet/MyFooter";
+import MyFooter from "./assets/newComponent/MyFooter";
 import Home from "./assets/newComponent/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MeteoCity from "./assets/newComponent/MeteoCity";
