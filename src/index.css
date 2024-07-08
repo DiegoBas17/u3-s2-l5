@@ -1,24 +1,34 @@
  body {
         font-family: "Rubik", sans-serif;
         font-weight: 500;
-		color: #2a2438 
+		color: #283334;
+		
 }
 
-.first-color { 
-	background: #dbd8e3; 
+ .first-color { 
+	background: #97C1C4; 
 }
 	
 .second-color { 
-	background: #5c5470;
-	color: #dbd8e3; 
+	background: #425456;
+	color: white; 
 }
 
 .third-color { 
-	background: #352f44; 
-	color: #dbd8e3; 
+	background: #5C7678; 
+	color: white; 
 }
 
 .fourth-color { 
-	background: #2a2438;
-	color: #dbd8e3;  
+	background: #5C7678;
+	color: white;  
 }
+
+
+/* 
+#01261F
+#F2F2F2
+#F29F05
+#F28705
+#D90404
+ */

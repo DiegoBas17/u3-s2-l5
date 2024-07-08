@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import {
-  Moisture,
-  ThermometerHigh,
-  ThermometerLow,
-  Wind,
-} from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import WeatherIcon from "./WeatherIcon";
+import humidity from "../svgAnimated/humidity.svg";
+import temperaturaMinima from "../svgAnimated/thermometer-colder.svg";
+import temperaturaMassima from "../svgAnimated/thermometer-warmer.svg";
+import vento from "../svgAnimated/wind-beaufort-1.svg";
 
 const MainCard = (props) => {
   const [objCityMeteo, setObjCityMeteo] = useState(null);
@@ -57,10 +55,7 @@ const MainCard = (props) => {
                     <div className="second-color rounded-4">
                       <Row className="align-items-center">
                         <Col>
-                          <Moisture
-                            style={{ height: "60px", width: "60px" }}
-                            className="my-4"
-                          />
+                          <img src={humidity} alt="" />
                         </Col>
                         <Col>
                           <p>
@@ -76,10 +71,7 @@ const MainCard = (props) => {
                     <div className="second-color rounded-4">
                       <Row className="align-items-center">
                         <Col>
-                          <ThermometerLow
-                            style={{ height: "60px", width: "60px" }}
-                            className="my-4"
-                          />
+                          <img src={temperaturaMinima} alt="" />
                         </Col>
                         <Col>
                           <p>
@@ -95,10 +87,7 @@ const MainCard = (props) => {
                     <div className="second-color rounded-4">
                       <Row className="align-items-center">
                         <Col>
-                          <ThermometerHigh
-                            style={{ height: "60px", width: "60px" }}
-                            className="my-4"
-                          />
+                          <img src={temperaturaMassima} alt="" />
                         </Col>
                         <Col>
                           <p>
@@ -114,10 +103,7 @@ const MainCard = (props) => {
                     <div className="second-color rounded-4">
                       <Row className="align-items-center">
                         <Col>
-                          <Wind
-                            style={{ height: "60px", width: "60px" }}
-                            className="my-4"
-                          />
+                          <img src={vento} alt="" />
                         </Col>
                         <Col>
                           <p>

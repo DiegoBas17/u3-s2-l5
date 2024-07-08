@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Calendar, GeoAltFill, Sunrise, Sunset } from "react-bootstrap-icons";
+import { Calendar, GeoAltFill } from "react-bootstrap-icons";
 import WeatherIcon from "./WeatherIcon";
+import sunrise from "../svgAnimated/sunrise.svg";
+import sunset from "../svgAnimated/sunset.svg";
+import humidity from "../svgAnimated/humidity.svg";
+import temperaturaMinima from "../svgAnimated/thermometer-colder.svg";
+import temperaturaMassima from "../svgAnimated/thermometer-warmer.svg";
+import barometro from "../svgAnimated/barometer.svg";
 
 const MainCardSecondPage = (props) => {
   const [objCityMeteo, setObjCityMeteo] = useState(null);
@@ -152,7 +158,7 @@ const MainCardSecondPage = (props) => {
                 <Row className="g-2">
                   <Col md="6">
                     <div className="second-color rounded-4 p-4 text-center">
-                      Temperatura minima{" "}
+                      Temperatura minima <img src={temperaturaMinima} alt="" />
                       {kelvinToCelsius(objCityMeteo.main.temp_min)}°C
                       <div className="progress" style={{ height: "20px" }}>
                         <div
@@ -170,6 +176,7 @@ const MainCardSecondPage = (props) => {
                   <Col md="6">
                     <div className="second-color rounded-4 p-4 text-center">
                       Temperatura massima{" "}
+                      <img src={temperaturaMassima} alt="" />
                       {kelvinToCelsius(objCityMeteo.main.temp_max)}°C
                       <div className="progress" style={{ height: "20px" }}>
                         <div
@@ -186,7 +193,8 @@ const MainCardSecondPage = (props) => {
                   </Col>
                   <Col md="6">
                     <div className="second-color rounded-4 p-4 text-center">
-                      Pressione {objCityMeteo.main.pressure}mb
+                      Pressione {objCityMeteo.main.pressure}mb{" "}
+                      <img src={barometro} alt="" />
                       <div className="progress" style={{ height: "20px" }}>
                         <div
                           className="progress-bar fourth-color"
@@ -202,7 +210,8 @@ const MainCardSecondPage = (props) => {
                   </Col>
                   <Col md="6">
                     <div className="second-color rounded-4 p-4 text-center">
-                      Umidità {objCityMeteo.main.humidity}%
+                      Umidità {objCityMeteo.main.humidity}%{" "}
+                      <img src={humidity} alt="" />
                       <div className="progress" style={{ height: "20px" }}>
                         <div
                           className="progress-bar fourth-color"
@@ -216,13 +225,13 @@ const MainCardSecondPage = (props) => {
                   </Col>
                   <Col md="6">
                     <div className="second-color rounded-4 p-2 text-center">
-                      <Sunrise className="h1 me-2" /> Alba{" "}
+                      <img src={sunrise} alt="" />
                       {calcolaOraEsatta(objCityMeteo.sys.sunrise)}
                     </div>
                   </Col>
                   <Col md="6">
                     <div className="second-color rounded-4 p-2 text-center">
-                      <Sunset className="h1 me-2" /> Tramonto{" "}
+                      <img src={sunset} alt="" />
                       {calcolaOraEsatta(objCityMeteo.sys.sunset)}
                     </div>
                   </Col>

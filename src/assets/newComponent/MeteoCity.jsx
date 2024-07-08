@@ -37,7 +37,7 @@ const MeteoCity = () => {
   return (
     <>
       {arrayGeoCity && (
-        <>
+        <Container className="mt-5">
           <h1 className="text-center">
             {arrayGeoCity[0].local_names.it
               ? arrayGeoCity[0].local_names.it
@@ -60,7 +60,7 @@ const MeteoCity = () => {
             lat={arrayGeoCity[0].lat}
             lon={arrayGeoCity[0].lon}
           />
-        </>
+        </Container>
       )}
     </>
   );

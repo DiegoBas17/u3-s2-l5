@@ -7,17 +7,24 @@ import MyFooter from "./assets/newComponent/MyFooter";
 import Home from "./assets/newComponent/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MeteoCity from "./assets/newComponent/MeteoCity";
+import { Col, Row } from "react-bootstrap";
 
 function App() {
   return (
     <div id="containerApp">
       <BrowserRouter>
-        <MyNavbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/meteo-city/:city" element={<MeteoCity />} />
-        </Routes>
-        <MyFooter />
+        <Row className="align-items-center">
+          <Col md="1">
+            <MyNavbar />
+          </Col>
+          <Col md="11">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/meteo-city/:city" element={<MeteoCity />} />
+            </Routes>
+          </Col>
+          <MyFooter />
+        </Row>
       </BrowserRouter>
     </div>
   );

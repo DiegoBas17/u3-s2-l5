@@ -82,7 +82,6 @@ const ForecastMeteoCard = (props) => {
     infinite: false,
     slidesToShow: 5,
     slidesToScroll: 1,
-    centerPadding: "60px",
     swipeToSlide: true,
   };
   return (
