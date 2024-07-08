@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Calendar, GeoAltFill, Sunrise, Sunset } from "react-bootstrap-icons";
+import WeatherIcon from "./WeatherIcon";
 
 const MainCardSecondPage = (props) => {
   const [objCityMeteo, setObjCityMeteo] = useState(null);
@@ -21,9 +22,6 @@ const MainCardSecondPage = (props) => {
       .catch((err) => alert(err));
   };
 
-  const getWeatherIconUrl = (iconCode) => {
-    return `http://openweathermap.org/img/w/${iconCode}.png`;
-  };
   /* funzione per ricavare i gradi Celsius dai Kelvin */
   const kelvinToCelsius = (kelvin) => {
     return Math.floor(kelvin - 273.15);
@@ -135,10 +133,7 @@ const MainCardSecondPage = (props) => {
           <Row>
             <Col md="4">
               <div className="third-color rounded-4 p-4">
-                <img
-                  src={getWeatherIconUrl(objCityMeteo.weather[0].icon)}
-                  alt={`Icona meteo per ${objCityMeteo.name}`}
-                />
+                <WeatherIcon icon={objCityMeteo.weather[0].icon} />
                 <h2>{kelvinToCelsius(objCityMeteo.main.temp)}°C</h2>
                 <p>{translateWeatherCondition(objCityMeteo.weather[0].main)}</p>
                 <hr />

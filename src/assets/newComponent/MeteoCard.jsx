@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import WeatherIcon from "./WeatherIcon";
 
 const MeteoCard = (props) => {
   const [objCityMeteo, setObjCityMeteo] = useState(null);
@@ -23,10 +24,6 @@ const MeteoCard = (props) => {
     fetchCurrentWeather();
   }, []);
 
-  /* Funzione per reperire la icona data dalla fetch */
-  const getWeatherIconUrl = (iconCode) => {
-    return `http://openweathermap.org/img/w/${iconCode}.png`;
-  };
   /* funzione per ricavare i gradi Celsius dai Kelvin */
   const kelvinToCelsius = (kelvin) => {
     return Math.floor(kelvin - 273.15);
@@ -38,12 +35,7 @@ const MeteoCard = (props) => {
         <Container className="second-color rounded-4">
           <Row>
             <Col md="6">
-              <img
-                src={getWeatherIconUrl(objCityMeteo.weather[0].icon)}
-                alt={`Icona meteo per ${objCityMeteo.name}`}
-                style={{ height: "110px", width: "110px" }}
-                className="d-inline"
-              />
+              <WeatherIcon icon={objCityMeteo.weather[0].icon} />
             </Col>
             <Col md="6" className="text-start my-auto ms-0 ps-0">
               <h4 className="d-inline">

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Slider from "react-slick";
+import WeatherIcon from "./WeatherIcon";
 
 const ForecastMeteoCard = (props) => {
   const [forecast, setForecast] = useState("");
@@ -23,10 +24,6 @@ const ForecastMeteoCard = (props) => {
   useEffect(() => {
     fetchForecast5d3h();
   }, []);
-
-  const getWeatherIconUrl = (iconCode) => {
-    return `http://openweathermap.org/img/w/${iconCode}.png`;
-  };
 
   const calcolaOraEsatta = (timestampUNIX) => {
     const data = new Date(timestampUNIX * 1000);
@@ -112,11 +109,7 @@ const ForecastMeteoCard = (props) => {
                     </h3>
                   </Col>
                   <Col md="6">
-                    <img
-                      src={getWeatherIconUrl(meteo.weather[0].icon)}
-                      alt=""
-                      className="d-inline"
-                    />
+                    <WeatherIcon icon={meteo.weather[0].icon} />
                   </Col>
                 </Row>
               </div>

@@ -1,26 +1,24 @@
-import clearSkyDay from "../svgAnimated/day.svg";
-import clearSkyNight from "./path/to/01n.png";
-import fewCloudsDay from "./path/to/02d.png";
-import fewCloudsNight from "./path/to/02n.png";
-import scatteredCloudsDay from "./path/to/03d.png";
-import scatteredCloudsNight from "./path/to/03n.png";
-import brokenCloudsDay from "./path/to/04d.png";
-import brokenCloudsNight from "./path/to/04n.png";
-import showerRainDay from "./path/to/09d.png";
-import showerRainNight from "./path/to/09n.png";
-import rainDay from "./path/to/10d.png";
-import rainNight from "./path/to/10n.png";
-import thunderstormDay from "./path/to/11d.png";
-import thunderstormNight from "./path/to/11n.png";
-import snowDay from "./path/to/13d.png";
-import snowNight from "./path/to/13n.png";
-import mistDay from "./path/to/50d.png";
-import mistNight from "./path/to/50n.png";
+import clearSkyDay from "../svgAnimated/01d.svg";
+import clearSkyNight from "../svgAnimated/01n.svg";
+import fewCloudsDay from "../svgAnimated/02d.svg";
+import fewCloudsNight from "../svgAnimated/02n.svg";
+import scatteredCloudsDay from "../svgAnimated/03d.svg";
+import scatteredCloudsNight from "../svgAnimated/03n.svg";
+import brokenCloudsDay from "../svgAnimated/04d.svg";
+import brokenCloudsNight from "../svgAnimated/04n.svg";
+import showerRainDay from "../svgAnimated/09d.svg";
+import showerRainNight from "../svgAnimated/09n.svg";
+import rainDay from "../svgAnimated/10d.svg";
+import rainNight from "../svgAnimated/10n.svg";
+import thunderstormDay from "../svgAnimated/11d.svg";
+import thunderstormNight from "../svgAnimated/11n.svg";
+import snowDay from "../svgAnimated/13d.svg";
+import snowNight from "../svgAnimated/13n.svg";
+import mistDay from "../svgAnimated/50d.svg";
+import mistNight from "../svgAnimated/50n.svg";
 
-const WeatherIcon = ({ code }) => {
-  let icon;
-
-  switch (code) {
+const WeatherIcon = ({ icon }) => {
+  switch (icon) {
     case "01d":
       icon = clearSkyDay;
       break;

@@ -7,6 +7,7 @@ import {
   Wind,
 } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
+import WeatherIcon from "./WeatherIcon";
 
 const MainCard = (props) => {
   const [objCityMeteo, setObjCityMeteo] = useState(null);
@@ -30,10 +31,6 @@ const MainCard = (props) => {
     fetchCurrentWeather();
   }, []);
 
-  /* Funzione per reperire la icona data dalla fetch */
-  const getWeatherIconUrl = (iconCode) => {
-    return `http://openweathermap.org/img/w/${iconCode}.png`;
-  };
   /* funzione per ricavare i gradi Celsius dai Kelvin */
   const kelvinToCelsius = (kelvin) => {
     return Math.floor(kelvin - 273.15);
@@ -51,11 +48,7 @@ const MainCard = (props) => {
                   <h2 className="pt-3">
                     {kelvinToCelsius(objCityMeteo.main.temp)}°C
                   </h2>
-                  <img
-                    src={getWeatherIconUrl(objCityMeteo.weather[0].icon)}
-                    alt={`Icona meteo per ${objCityMeteo.name}`}
-                    style={{ height: "110px", width: "110px" }}
-                  />
+                  <WeatherIcon icon={objCityMeteo.weather[0].icon} />
                 </div>
               </Col>
               <Col md="9">
