@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import WeatherIcon from "./WeatherIcon";
 
-const MeteoCard = (props) => {
+const WeatherCardAround = (props) => {
   const [objCityMeteo, setObjCityMeteo] = useState(null);
   const fetchCurrentWeather = () => {
     fetch(
@@ -71,4 +71,4 @@ const MeteoCard = (props) => {
   );
 };
 
-export default MeteoCard;
+export default WeatherCardAround;

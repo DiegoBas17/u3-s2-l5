@@ -7,7 +7,7 @@ import temperaturaMinima from "../svgAnimated/thermometer-colder.svg";
 import temperaturaMassima from "../svgAnimated/thermometer-warmer.svg";
 import vento from "../svgAnimated/wind-beaufort-1.svg";
 
-const MainCard = (props) => {
+const MainCardHome = (props) => {
   const [objCityMeteo, setObjCityMeteo] = useState(null);
   const fetchCurrentWeather = () => {
     fetch(
@@ -55,7 +55,11 @@ const MainCard = (props) => {
                     <div className="second-color rounded-4">
                       <Row className="align-items-center">
                         <Col>
-                          <img src={humidity} alt="" />
+                          <img
+                            src={humidity}
+                            alt="humidity"
+                            style={{ height: "10rem" }}
+                          />
                         </Col>
                         <Col>
                           <p>
@@ -71,7 +75,11 @@ const MainCard = (props) => {
                     <div className="second-color rounded-4">
                       <Row className="align-items-center">
                         <Col>
-                          <img src={temperaturaMinima} alt="" />
+                          <img
+                            src={temperaturaMinima}
+                            alt="temperaturaMinima"
+                            style={{ height: "10rem" }}
+                          />
                         </Col>
                         <Col>
                           <p>
@@ -87,7 +95,11 @@ const MainCard = (props) => {
                     <div className="second-color rounded-4">
                       <Row className="align-items-center">
                         <Col>
-                          <img src={temperaturaMassima} alt="" />
+                          <img
+                            src={temperaturaMassima}
+                            alt="temperaturaMassima"
+                            style={{ height: "10rem" }}
+                          />
                         </Col>
                         <Col>
                           <p>
@@ -103,7 +115,11 @@ const MainCard = (props) => {
                     <div className="second-color rounded-4">
                       <Row className="align-items-center">
                         <Col>
-                          <img src={vento} alt="" />
+                          <img
+                            src={vento}
+                            alt="vento"
+                            style={{ height: "10rem" }}
+                          />
                         </Col>
                         <Col>
                           <p>
@@ -124,4 +140,4 @@ const MainCard = (props) => {
     </>
   );
 };
-export default MainCard;
+export default MainCardHome;
