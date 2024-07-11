@@ -37,12 +37,9 @@ const WeatherCardAround = (props) => {
             <Col md="6">
               <WeatherIcon icon={objCityMeteo.weather[0].icon} />
             </Col>
-            <Col md="6" className="text-start my-auto ms-0 ps-0">
-              <h4 className="d-inline">
-                <span className="h6 opacity-50">Luogo</span>
-                <br />
-                {objCityMeteo.name}
-              </h4>
+            <Col md="6" className="text-start my-auto ms-0">
+              <p className="h6 opacity-50 text-center">Luogo</p>
+              <h4 className="text-center">{objCityMeteo.name}</h4>
             </Col>
             <Col md="4">
               <p>

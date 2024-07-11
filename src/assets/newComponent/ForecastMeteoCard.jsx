@@ -76,14 +76,41 @@ const ForecastMeteoCard = (props) => {
     return Math.floor(kelvin - 273.15);
   };
 
-  /* slick verticale */
   const settings = {
     dots: false,
     infinite: false,
     slidesToShow: 5,
     slidesToScroll: 1,
     swipeToSlide: true,
+    initialSlide: 1,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+    ],
   };
+
   return (
     <Container>
       <h2>Nelle prossime ore:</h2>

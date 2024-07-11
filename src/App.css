@@ -10,7 +10,3 @@
     border-radius: 4px; 
     color: #283334; 
   }
-  
-  .nav-link:hover {
-    background-color: rgba(255, 0, 0, 0.1);
-  }

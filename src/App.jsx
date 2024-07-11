@@ -14,7 +14,7 @@ function App() {
     <div id="containerApp">
       <BrowserRouter>
         <Row className="align-items-center">
-          <Col md="1">
+          <Col lg="1">
             <MyNavbar />
           </Col>
           <Col md="11">

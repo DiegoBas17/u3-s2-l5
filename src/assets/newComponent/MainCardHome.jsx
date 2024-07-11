@@ -39,17 +39,21 @@ const MainCardHome = (props) => {
       {objCityMeteo && (
         <Link to={`/meteo-city/` + "roma"} className="text-decoration-none">
           <Container className="third-color p-4 rounded-4">
-            <Row>
-              <Col md="3">
+            <Row className="g-3">
+              <Col md="6">
                 <div className="second-color rounded-4">
                   <h2 className="pt-3">{objCityMeteo.name}</h2>
                   <h2 className="pt-3">
                     {kelvinToCelsius(objCityMeteo.main.temp)}°C
                   </h2>
-                  <WeatherIcon icon={objCityMeteo.weather[0].icon} />
+
+                  <WeatherIcon
+                    icon={objCityMeteo.weather[0].icon}
+                    style={{ width: "30vw" }}
+                  />
                 </div>
               </Col>
-              <Col md="9">
+              <Col md="6">
                 <Row className="g-3">
                   <Col md="6">
                     <div className="second-color rounded-4">

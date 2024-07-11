@@ -8,6 +8,8 @@ import humidity from "../svgAnimated/humidity.svg";
 import temperaturaMinima from "../svgAnimated/thermometer-colder.svg";
 import temperaturaMassima from "../svgAnimated/thermometer-warmer.svg";
 import barometro from "../svgAnimated/barometer.svg";
+import vento from "../svgAnimated/wind-beaufort-1.svg";
+import temperatura from "../svgAnimated/thermometer-celsius.svg";
 
 const MainCardSecondPage = (props) => {
   const [objCityMeteo, setObjCityMeteo] = useState(null);
@@ -139,7 +141,10 @@ const MainCardSecondPage = (props) => {
           <Row>
             <Col md="4">
               <div className="third-color rounded-4 p-4">
-                <WeatherIcon icon={objCityMeteo.weather[0].icon} />
+                <WeatherIcon
+                  icon={objCityMeteo.weather[0].icon}
+                  style={{ width: "19vw" }}
+                />
                 <h2>{kelvinToCelsius(objCityMeteo.main.temp)}°C</h2>
                 <p>{translateWeatherCondition(objCityMeteo.weather[0].main)}</p>
                 <hr />
@@ -158,7 +163,12 @@ const MainCardSecondPage = (props) => {
                 <Row className="g-2">
                   <Col md="6">
                     <div className="second-color rounded-4 p-4 text-center">
-                      Temperatura minima <img src={temperaturaMinima} alt="" />
+                      Temperatura minima{" "}
+                      <img
+                        src={temperaturaMinima}
+                        alt=""
+                        style={{ height: "3rem" }}
+                      />
                       {kelvinToCelsius(objCityMeteo.main.temp_min)}°C
                       <div className="progress" style={{ height: "20px" }}>
                         <div
@@ -176,7 +186,11 @@ const MainCardSecondPage = (props) => {
                   <Col md="6">
                     <div className="second-color rounded-4 p-4 text-center">
                       Temperatura massima{" "}
-                      <img src={temperaturaMassima} alt="" />
+                      <img
+                        src={temperaturaMassima}
+                        alt=""
+                        style={{ height: "3rem" }}
+                      />
                       {kelvinToCelsius(objCityMeteo.main.temp_max)}°C
                       <div className="progress" style={{ height: "20px" }}>
                         <div
@@ -194,7 +208,7 @@ const MainCardSecondPage = (props) => {
                   <Col md="6">
                     <div className="second-color rounded-4 p-4 text-center">
                       Pressione {objCityMeteo.main.pressure}mb{" "}
-                      <img src={barometro} alt="" />
+                      <img src={barometro} alt="" style={{ height: "3rem" }} />
                       <div className="progress" style={{ height: "20px" }}>
                         <div
                           className="progress-bar fourth-color"
@@ -211,7 +225,7 @@ const MainCardSecondPage = (props) => {
                   <Col md="6">
                     <div className="second-color rounded-4 p-4 text-center">
                       Umidità {objCityMeteo.main.humidity}%{" "}
-                      <img src={humidity} alt="" />
+                      <img src={humidity} alt="" style={{ height: "3rem" }} />
                       <div className="progress" style={{ height: "20px" }}>
                         <div
                           className="progress-bar fourth-color"
@@ -225,14 +239,30 @@ const MainCardSecondPage = (props) => {
                   </Col>
                   <Col md="6">
                     <div className="second-color rounded-4 p-2 text-center">
-                      <img src={sunrise} alt="" />
+                      <img src={sunrise} alt="" style={{ height: "5rem" }} />
                       {calcolaOraEsatta(objCityMeteo.sys.sunrise)}
                     </div>
                   </Col>
                   <Col md="6">
                     <div className="second-color rounded-4 p-2 text-center">
-                      <img src={sunset} alt="" />
+                      <img src={sunset} alt="" style={{ height: "5rem" }} />
                       {calcolaOraEsatta(objCityMeteo.sys.sunset)}
+                    </div>
+                  </Col>
+                  <Col md="6">
+                    <div className="second-color rounded-4 p-2 text-center">
+                      <img src={vento} alt="" style={{ height: "5rem" }} />
+                      {objCityMeteo.wind.speed}
+                    </div>
+                  </Col>
+                  <Col md="6">
+                    <div className="second-color rounded-4 p-2 text-center">
+                      <img
+                        src={temperatura}
+                        alt=""
+                        style={{ height: "5rem" }}
+                      />
+                      {objCityMeteo.main.feels_like}
                     </div>
                   </Col>
                 </Row>

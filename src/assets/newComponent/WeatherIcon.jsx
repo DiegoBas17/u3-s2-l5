@@ -17,7 +17,7 @@ import snowNight from "../svgAnimated/13n.svg";
 import mistDay from "../svgAnimated/50d.svg";
 import mistNight from "../svgAnimated/50n.svg";
 
-const WeatherIcon = ({ icon }) => {
+const WeatherIcon = ({ icon, style = {} }) => {
   switch (icon) {
     case "01d":
       icon = clearSkyDay;
@@ -77,7 +77,7 @@ const WeatherIcon = ({ icon }) => {
       icon = clearSkyDay;
   }
 
-  return <img src={icon} alt="Weather Icon" />;
+  return <img src={icon} alt="Weather Icon" style={style} />;
 };
 
 export default WeatherIcon;
